@@ -1,0 +1,20 @@
+target-version = "py310"
+line-length = 120
+
+[lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes (unused imports, undefined names, etc.)
+    "I",   # isort (import ordering)
+    "UP",  # pyupgrade (modernise syntax for target Python version)
+    "D",   # pydocstyle (Google docstring convention)
+]
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.per-file-ignores]
+# Tests and demo script do not require Google-style docstrings
+"tests/*" = ["D"]
+"main.py" = ["D"]
